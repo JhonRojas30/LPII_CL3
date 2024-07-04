@@ -2,32 +2,40 @@ package com.bd.basico.servicio;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import com.bd.basico.modelo.TblProductocl3;
+import com.bd.basico.repositorio.IProductoRepositorio;
 
 public class ClassProductoImp implements IProductoServicio{
 
+	//APLICAMOS LA INYECCION DE DEPENDENCIA
+		@Autowired
+		private IProductoRepositorio iproductorepository;
+
+	
 	@Override
 	public List<TblProductocl3> ListadoProductos() {
 		// TODO Auto-generated method stub
-		return null;
+		// DEVUELVE LISTADO
+				return (List<TblProductocl3>)iproductorepository.findAll();
 	}
 
 	@Override
 	public void RegistrarProducto(TblProductocl3 producto) {
-		// TODO Auto-generated method stub
-		
+		// REGISTRAR LOS DATOS
+		iproductorepository.save(producto);
 	}
 
 	@Override
 	public TblProductocl3 BuscarporId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		// BUSCAR POR CODIGO, SI NO ENCUENTRA DEVUELVE NULO...
+		return iproductorepository.findById(id).orElse(null);
 	}
 
 	@Override
 	public void Eliminar(Integer id) {
-		// TODO Auto-generated method stub
-		
+		// ELIMINAR POR CODIGO
+	iproductorepository.deleteById(id);	
 	}
 
 }
