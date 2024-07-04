@@ -8,11 +8,11 @@
 
     </head>
 
-	<body>
+	<body bgcolor=#c5dec9>
 	    <h1 align="center">Registrar Producto</h1>
 	    <form th:action="@{/vistas/GuardarProducto}" method="post" th:object="${regproducto}">
 	        <table align="center">
-	            <input type="hidden" th:field="*{idproductoscl3}">
+	            <input type="hidden" th:field="*{idproductocl3}">
 	            <tr>
 	                <td>Nombre</td>
 	                <td><input type="text" th:field="*{nombrecl3}"></td>
@@ -20,6 +20,10 @@
 	            <tr>
 	                <td>Precio Venta</td>
 	                <td><input type="text" th:field="*{precioventacl3}"></td>
+	            </tr>
+	             <tr>
+	                <td>Stock</td>
+	                <td><input type="text" th:field="*{stock}"></td>
 	            </tr>
 	            <tr>
 	                <td>Precio Compra</td>

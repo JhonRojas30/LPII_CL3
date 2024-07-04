@@ -3,14 +3,17 @@ package com.bd.basico.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.bd.basico.modelo.TblProductocl3;
 import com.bd.basico.repositorio.IProductoRepositorio;
 
+@Service
 public class ClassProductoImp implements IProductoServicio{
 
 	//APLICAMOS LA INYECCION DE DEPENDENCIA
 		@Autowired
-		private IProductoRepositorio iproductorepository;
+		private IProductoRepositorio iproductorepository;	
 
 	
 	@Override
